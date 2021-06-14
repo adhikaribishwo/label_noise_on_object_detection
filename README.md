@@ -77,15 +77,18 @@ In the paper, we used following three object detection dataset:
 
     >python3 models/research/object_detection/model_main.py --pipeline_config_path=pretrained_weight/ssd_mobilenet_v1_coco_2018_01_28/CE_pipeline.config --train_dir=trained_models/train
 
-## References
 
-    ```
+
+## Reference
+
+If you use this work, please cite as follow
+
     @misc{adhikari_ln_2021,
     author = {Bishwo Adhikari and Jukka Peltomäki and Saeed Bakhshi Germi and Esa Rahtu and Heikki Huttunen},
     title = {Effect of label noise on robustness of deep neural network object detectors},
     howpublished = {\url{https://github.com/adhikaribishwo/label_noise_on_object_detection}},
-    year = {2021}
-    }
-    ```
+    year = {2021}}
+    
+
 
 * Other related works can be found [here](https://github.com/subeeshvasu/Awesome-Learning-with-Label-Noise). 
