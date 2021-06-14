@@ -12,22 +12,80 @@ In the paper, we used following three object detection dataset:
  * [FDDB face dataset](http://vis-www.cs.umass.edu/fddb/)
 
 
+## Scripts
+- *drop_annotations.py* removes the desire amount of noise and create noisly annoations(in xml format)
+- *convert_xml_tfrecord.py*  converts the annoation from xml format to tensorflow record (tfrecord) format
+
+
 ## Experimental setup
 
-- We use Cross entropy (CE) loss and Focal (FL) loss [1].
 - We use Tensorflow Object detection API as our training platfrom. Installation guide can be found [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/tensorflow-1.14/install.html).
-- We use single stage object detection[2], SSD MobileNet V1 network with MSCOCO pretained weight from [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md).
-
-## Training
+- We use single stage object detection, SSD MobileNet V1 network with MSCOCO pretained weight downloaded from [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md).
  
-Training can be done as:
->python3 models/research/object_detection/model_main.py \
-    	--pipeline_config_path=models/ssd_mobilenet_v1_coco_2018_01_28/pipeline.config  \
-    	--train_dir=models/train
+  
+- On working directory 
+  -   Download tensorflow models repository in **models**
+  -   Download pretrained weight in **pretrained_weight**  
+
+
+   **Structure of working direcotry**
+
+    ```
+    project_directory
+    │   README.md
+    │   convert_xml_tfrecord.py 
+    |   drop_annotations.py
+    |   
+    │
+    └─── models
+    │   │   ...
+    │   │
+    │   └─── Research
+    │       │ ...
+    |       └─── Object detection
+    |             └─── ...
+    |                 └─── ...
+    │   
+    └─── pretrained_weight
+    |    └───  ssd_mobilenet_v1_coco_2018_01_28
+    │            │   CE_pipeline.config
+    │            │   FL_pipeline.config
+    │            │   checkpoint
+    │            │   ...
+    |            └─── saved_model
+    |
+    └─── trained_models
+    |    | ...
+    │   
+    └─── data
+        └─── Indoor
+        └─── PASCAL VOC
+        └─── FDDB
+        └─── Results
+            | plot_results.py
+            | graphs*.pdf
+
+
+    ```
+
+
+- Training can be done as:
+
+    >python3 models/research/object_detection/model_main.py  --pipeline_config_path=pretrained_weight/ssd_mobilenet_v1_coco_2018_01_28/CE_pipeline.config  --train_dir=trained_models/train
+
+    Or 
+
+    >python3 models/research/object_detection/model_main.py --pipeline_config_path=pretrained_weight/ssd_mobilenet_v1_coco_2018_01_28/CE_pipeline.config --train_dir=trained_models/train
 
 ## References
-[1] Lin et al., Focal Loss for Dense Object Detection, (ICCV) 2017.
-[2] 
-[3]
+
+    ```
+    @misc{adhikari_ln_2021,
+    author = {Bishwo Adhikari and Jukka Peltomäki and Saeed Bakhshi Germi and Esa Rahtu and Heikki Huttunen},
+    title = {Effect of label noise on robustness of deep neural network object detectors},
+    howpublished = {\url{https://github.com/adhikaribishwo/label_noise_on_object_detection}},
+    year = {2021}
+    }
+    ```
 
 * Other related works can be found [here](https://github.com/subeeshvasu/Awesome-Learning-with-Label-Noise). 
