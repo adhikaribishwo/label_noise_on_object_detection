@@ -74,7 +74,6 @@ plt.show()
 # plt.imshow(X, alpha=)
 
 
-
 # gammas from 0 to 8
 gammas = range(9)
 
@@ -110,16 +109,6 @@ plt.tight_layout()
 plt.savefig('gammas_plot.pdf')
 plt.show()
 
-
-# def normalize(x):
-#     return 100*(x-x[0]) / x[0]
-
-def normalize(x):
-    new_list = []
-    for i in x:
-        ii = ((i - x[0])/(x[0]))*100
-        new_list.append(ii)
-    return new_list
     
 fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize = (6,3))
 ax1.plot(noise, normalize(fl_Indoor), 's-', noise, normalize(ce_Indoor), 'o-')
