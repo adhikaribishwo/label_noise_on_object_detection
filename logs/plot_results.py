@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan  4 16:05:18 2018
-
 @author: bishwo
 
 Usages: experiments results and visualization 
+Run as: python3 plot_results.py
 """
 
 import matplotlib
