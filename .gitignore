@@ -1,10 +1,11 @@
 # Don't track content of these folders
 __pycache__/
 #logs/
-data/*
-pretrained_models/*
+data/Indoor/*
+data/PASCAL_VOC/*
+data/FDDB/*
 codes/*
-model/ssd_mobilenet_v1_coco_2018_01_28/*
+pretrained_weights/ssd_mobilenet_v1_coco_2018_01_28/*
 # Compiled source #
 ###################
 *.com
@@ -33,4 +34,6 @@ model/ssd_mobilenet_v1_coco_2018_01_28/*
 *.pb
 *.ckpt.meta
 *.ckpt.index
+*.record
+
 
