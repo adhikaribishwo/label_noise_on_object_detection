@@ -33,7 +33,7 @@ pretrained_weights/ssd_mobilenet_v1_coco_2018_01_28/*
 *.rar
 *.pb
 *.ckpt.meta
-*.ckpt.index
+*.ckpt.*
 *.record
 
 
