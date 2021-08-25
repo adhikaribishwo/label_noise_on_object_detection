@@ -83,11 +83,17 @@ In the paper, we used following three object detection dataset:
 
 If you use this work, please cite as follow
 
-    @misc{adhikari_ln_2021,
-    author = {Bishwo Adhikari and Jukka Peltomäki and Saeed Bakhshi Germi and Esa Rahtu and Heikki Huttunen},
-    title = {Effect of label noise on robustness of deep neural network object detectors},
-    howpublished = {\url{https://github.com/adhikaribishwo/label_noise_on_object_detection}},
-    year = {2021}}
+   @InProceedings{adhikari_2021LN,
+   author="Adhikari, Bishwo and Peltom{\"a}ki, Jukka and Germi, Saeed Bakhshi and Rahtu, Esa and Huttunen, Heikki",
+   editor="Habli, Ibrahim and Sujan, Mark and Gerasimou, Simos and Schoitsch, Erwin and Bitsch, Friedemann",
+   title="Effect of Label Noise on Robustness of Deep Neural Network Object Detectors",
+   booktitle="Computer Safety, Reliability, and Security. SAFECOMP 2021 Workshops",
+   year="2021",
+   publisher="Springer International Publishing",
+   address="Cham",
+   pages="239--250",
+   isbn="978-3-030-83906-2"}
+
     
 
 
